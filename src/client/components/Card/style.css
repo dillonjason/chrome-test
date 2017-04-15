@@ -1,4 +1,14 @@
 .card {
+    display: block;
+}
+
+.content:after {
+    display: block;
+    content: ' ';
+    clear: both;
+}
+
+.card > .content {
     background: lightgrey;
     padding: 5px;
     margin: 5px;
@@ -6,14 +16,15 @@
     display: inline-block;
 }
 
-.card.alt {
-    background: royalblue;
-}
-
-.card.full-width {
+.card.full-width > .content {
     display: block;
 }
 
-.card.left-tail {}
+.card.alt > .content {
+    background: royalblue;
+    color: rgba(256,256,256, 0.8)
+}
 
-.card.right-tail {}
+.card.right > .content {
+    float: right;
+}

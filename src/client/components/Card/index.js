@@ -13,31 +13,28 @@ export class Card extends Component {
       optionalClasses += ' full-width';
     }
 
-    if (this.props.leftTail) {
-      optionalClasses += ' left-tail';
-    }
-    else if (this.props.rightTail) {
-      optionalClasses += 'right-tail';
+    if (this.props.right) {
+      optionalClasses += 'right';
     }
 
     return(
       <div className={`card ${optionalClasses}`}>
-        {this.props.children}
+        <div className="content">
+          {this.props.children}
+        </div>
       </div>
     );
   }
 }
 
 Card.propTypes = {
-  leftTail: React.PropTypes.bool,
-  rightTail: React.PropTypes.bool,
+  right: React.PropTypes.bool,
   altStyle: React.PropTypes.bool,
   maxWidth: React.PropTypes.bool
 };
 
 Card.defaultProps = {
-  leftTail: false,
-  rightTail: false,
+  right: false,
   altStyle: false,
   maxWidth: false
 };

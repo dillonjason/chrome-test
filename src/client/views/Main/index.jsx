@@ -17,6 +17,14 @@ export class Main extends Component {
         <Card maxWidth={true}>
           Full Width
         </Card>
+
+        <Card altStyle={true}>
+          Alt Style
+        </Card>
+
+        <Card right={true}>
+          Right Tail
+        </Card>
       </div>
     );
   }
