@@ -64,6 +64,7 @@ export class Chat extends Component {
     });
 
     this.setState({conversation, incomingResponse: true, input: ''}, () => {
+      this.messasges.scrollTop = this.messasges.scrollHeight;
       window.setTimeout(() => {
         conversation.push({
           id: Math.random(),
@@ -72,7 +73,7 @@ export class Chat extends Component {
           timestamp: new Date()
         });
 
-        this.setState({conversation, incomingResponse: false});
+        this.setState({conversation, incomingResponse: false}, () => this.messasges.scrollTop = this.messasges.scrollHeight);
       }, 2000);
     });
   }
@@ -102,8 +103,10 @@ export class Chat extends Component {
           <div className="close">
             <div className="close-button" onClick={this.hideConversation.bind(this)}>Leave Conversation</div>
           </div>
-          <MessageContainer message={initMessage}/>
-          {this.state.conversation.map(message => <MessageContainer key={message.id} message={message}/>)}
+          <div className="messages" ref={(c) => this.messasges = c}>
+            <MessageContainer message={initMessage}/>
+            {this.state.conversation.map(message => <MessageContainer key={message.id} message={message}/>)}
+          </div>
         </div>
         <div className="input-container">
           <input
