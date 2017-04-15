@@ -1,0 +1,43 @@
+.chat {
+    position: absolute;
+    bottom: 0;
+    width: 100%
+}
+
+.conversation {
+    height: 0;
+    overflow: hidden;
+    transition: all 250ms ease-in-out;
+}
+
+.conversation.show {
+    height: 400px;
+}
+
+.input-container {
+    min-height: 40px;
+}
+
+.input {
+    float: left;
+    width: calc(90% - 20px);
+    border: none;
+    height: 40px;
+    padding: 0 10px;
+}
+
+.input:focus, .input:active {
+    border: none;
+    outline: none;
+}
+
+.send-icon {
+    float: left;
+    width: 10%;
+    text-align: center;
+    background: royalblue;
+    color: white;
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+}

@@ -18,7 +18,7 @@ export class Chat extends Component {
     const initMessage = {
       id: -1,
       isResponse: true,
-      test: 'Hello Dillon! What can I help you with today?',
+      text: 'Hello Dillon! What can I help you with today?',
       timestamp: new Date()
     };
 

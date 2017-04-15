@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './style.css';
 
 import {Card} from '../../components/Card';
+import {Chat} from '../../components/Chat';
 
 export class Main extends Component {
   render() {
@@ -15,6 +16,7 @@ export class Main extends Component {
             Full Width
           </Card>
         </div>
+        <Chat/>
       </div>
     );
   }
