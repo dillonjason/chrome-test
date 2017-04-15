@@ -11,8 +11,37 @@ export class Chat extends Component {
       showConversation: false,
       conversation: [],
       incomingResponse: false,
-      input: ''
+      input: '',
+      helpText: this.getHelpText()
     }
+  }
+
+  componentDidMount() {
+    window.setInterval(() => {
+        this.setState({helpText: this.getHelpText()})
+      },
+      20000)
+  }
+
+  getHelpText() {
+    const helpText = [
+      'visitors',
+      'restaurants recommended by your coworkers',
+      'the weather',
+      'where conference rooms are',
+      'what I can help you with',
+      'when your next meeting is'
+    ];
+
+    let currentHelp = (this.state || {}).helpText || '';
+    let randomHelp = currentHelp;
+
+    while(randomHelp === currentHelp || randomHelp === '') {
+      let index = Math.floor(Math.random() * (helpText.length - 1));
+      randomHelp = helpText[index];
+    }
+
+    return randomHelp;
   }
 
   showConversation() {
@@ -80,6 +109,7 @@ export class Chat extends Component {
           <input
             className="input"
             type="text"
+            placeholder={`Ask about ${this.state.helpText}`}
             value={this.state.input}
             onInput={this.setInput.bind(this)}
             onFocus={this.showConversation.bind(this)}
