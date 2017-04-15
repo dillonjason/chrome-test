@@ -10,21 +10,11 @@ export class Main extends Component {
         <h1 className="header">Chromeciérge</h1>
         <p className="currentMessage">Check out what's going on!</p>
         <hr className="header-split" />
-        <Card>
-          Something
-        </Card>
-
-        <Card maxWidth={true}>
-          Full Width
-        </Card>
-
-        <Card altStyle={true}>
-          Alt Style
-        </Card>
-
-        <Card right={true}>
-          Right Tail
-        </Card>
+        <div className="discovery-section">
+          <Card maxWidth={true}>
+            Full Width
+          </Card>
+        </div>
       </div>
     );
   }
