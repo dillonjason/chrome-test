@@ -10,7 +10,7 @@ export class MessageContainer extends Component {
 
     this.state = {
       tsInterval: null,
-      tsMessage: ''
+      tsMessage: this.getTsMessage()
     }
   }
 
@@ -53,13 +53,14 @@ export class MessageContainer extends Component {
 
   render() {
     return(
-      <div className="message-container" key={this.props.message.id}>
+      <div className="message-container">
         <Card
           altStyle={this.props.message.isResponse}
+          right={!this.props.message.isResponse}
         >
           <p className="message-text">{this.props.message.text}</p>
         </Card>
-        <span className="message-timestamp">{this.state.tsMessage}</span>
+        <span className={`message-timestamp ${!this.props.message.isResponse ? 'right' : ''}`}>{this.state.tsMessage}</span>
       </div>
     );
   }

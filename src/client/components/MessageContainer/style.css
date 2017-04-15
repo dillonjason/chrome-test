@@ -1,4 +1,23 @@
 .message-timestamp {
     color: rgba(0, 0, 0, 0.5);
     font-size: 10px;
+    margin: 0 7px;
+}
+
+.message-timestamp.right {
+    float: right;
+}
+
+.message-container {
+    margin-bottom: 5px;
+}
+
+.message-container:after {
+    content: ' ';
+    display: block;
+    clear: both;
+}
+
+.message-text {
+    margin: 5px 5px;
 }
