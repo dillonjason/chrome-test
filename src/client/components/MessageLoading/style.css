@@ -1,0 +1,13 @@
+.dot {
+    transition: all 500ms ease-in-out;
+}
+
+.dot.big {
+    font-size: 20px;
+}
+
+.message-loading {
+    line-height: 20px;
+    height: 20px;
+    text-align: center;
+}

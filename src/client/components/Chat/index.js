@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './style.css';
 
 import {MessageContainer} from '../MessageContainer';
+import {MessageLoading} from '../MessageLoading';
 
 export class Chat extends Component {
   constructor(props) {
@@ -106,6 +107,7 @@ export class Chat extends Component {
           <div className="messages" ref={(c) => this.messasges = c}>
             <MessageContainer message={initMessage}/>
             {this.state.conversation.map(message => <MessageContainer key={message.id} message={message}/>)}
+            {this.state.incomingResponse && <MessageLoading />}
           </div>
         </div>
         <div className="input-container">

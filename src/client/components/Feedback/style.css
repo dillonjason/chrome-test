@@ -1,0 +1,22 @@
+.show-feedback {
+    text-align: right;
+    cursor: pointer;
+}
+
+.feedback-input {
+    font-weight: bold;
+}
+
+.feedback-buttons {
+    width: 100%;
+}
+
+.feedback-buttons button {
+    width: 140px;
+    white-space: nowrap;
+    background: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}

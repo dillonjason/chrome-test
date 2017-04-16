@@ -3,6 +3,7 @@ import moment from 'moment';
 import './style.css';
 
 import {Card} from '../Card';
+import {Feedback} from '../Feedback';
 
 export class MessageContainer extends Component {
   constructor(props) {
@@ -59,8 +60,10 @@ export class MessageContainer extends Component {
           right={!this.props.message.isResponse}
         >
           <p className="message-text">{this.props.message.text}</p>
+          {this.props.message.isResponse && <Feedback />}
         </Card>
         <span className={`message-timestamp ${!this.props.message.isResponse ? 'right' : ''}`}>{this.state.tsMessage}</span>
+        {this.props.detailsComponent}
       </div>
     );
   }
@@ -71,7 +74,12 @@ MessageContainer.propTypes = {
     id: React.PropTypes.number.isRequired,
     isResponse: React.PropTypes.bool,
     text: React.PropTypes.string.isRequired,
-    timestamp: React.PropTypes.object.isRequired
+    timestamp: React.PropTypes.object.isRequired,
+    detailsComponent: React.PropTypes.element,
+    followUps: React.PropTypes.arrayOf(React.PropTypes.shape({
+      display: React.PropTypes.string.isRequired,
+      question: React.PropTypes.string.isRequired
+    }))
   }).isRequired
 };
 
